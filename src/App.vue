@@ -3,6 +3,7 @@ import AppVeeValidateForm from './components/organism/AppVeeValidateForm.vue'
 
 import { z } from 'zod';
 import AppAutoForm from '@/components/organism/AppAutoForm.vue';
+import { Button } from '@/components/ui/button';
 
 // Define your schema
 const formSchema = z.object({
@@ -39,6 +40,12 @@ function handleFormSubmit(values: any) {
             <input type="checkbox" id="agreeTerms" v-bind="props" class="w-5 h-5 border-2 border-blue-500" />
             <label for="agreeTerms" class="text-lg font-bold">{{ field.name }}</label>
           </div>
+        </template>
+
+        <template #submit>
+          <Button type="submit">
+            Submit
+          </Button>
         </template>
       </AppAutoForm>
     </div>
